@@ -1,0 +1,135 @@
+<section class="" id="mascotasCrear">
+  <div class="section-title">
+    <h3 class="display-4 title" >
+      Crear Mascotas
+    </h3>
+  </div>
+
+  <div class="card mb-3 w-75 shadow formularios">
+    <div class="row mb-3 g-0">
+      <div class="col-md-4">
+        <img
+          src="./assets/_Gatos/gato19.jpg"
+          class="img-fluid imgForm"
+          alt="imagen"
+        />
+      </div>
+      <div class="col-md-8 kard">
+        <div class="card-body">
+          <form [formGroup]="formMascota" (ngSubmit) = "guardarMascota()">
+            <div class="row mb-3">
+
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <img src="./assets/iconos/gato.gif" class="kicon" width="40px" alt="">
+                  <input formControlName="nombre"
+                    type="text"
+                    class="form-control"
+                    id="floatingNombre"
+                    placeholder="Nombre"
+                    value=""
+                  />
+                  <label for="floatingNombre">Nombre</label>
+                </div>
+                <div *ngIf="formMascota.get('nombre')?.touched && formMascota.get('nombre')?.errors?.['required']"
+                   class="invalid-feedback">Digite el Nombre</div>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <img src="./assets/iconos/perro.gif" class="kicon" width="40px" alt="">
+                  <!-- <i class="bi bi-people kicon h3"></i> -->
+                  <select formControlName="especie" for="Especie" class="form-select kselect" id="floatingEspecie">
+                    <option selected disabled value="">Seleccione...</option>
+                    <option>Perro</option>
+                    <option>Gato</option>
+                    <option>Ave</option>
+                    <option>Conejo</option>
+                  </select>
+                  <label for="floatingEspecie">Especie</label>
+                </div>
+                <div *ngIf="formMascota.get('especie')?.touched && formMascota.get('especie')?.errors?.['required']"
+                   class="invalid-feedback">Seleccione la Especie</div>
+              </div>
+
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <img src="./assets/iconos/diamante.gif" class="kicon" width="40px" alt="">
+                  <select formControlName="plan" for="Plan" class="form-select kselect" id="floatingEstado">
+                    <option selected disabled value="">Seleccione...</option>
+                    <option *ngFor="let kplan of listadoPlanes" value={{kplan.id}}>{{kplan.precio | currency}} - {{kplan.nombre}}</option>
+                  </select>
+                  <label for="floatingEstado">Plan</label>
+                </div>
+                <div *ngIf="formMascota.get('plan')?.touched && formMascota.get('plan')?.errors?.['required']"
+                   class="invalid-feedback">Seleccione el Plan</div>
+              </div>
+            </div>
+
+            <div class="row mb-3 g-2">
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <img src="./assets/iconos/pulpo.gif" class="kicon" width="40px" alt="">
+                  <select formControlName="propietario" for="Propietario" class="form-select kselect" id="floatingEstado">
+                    <option selected disabled value="">Seleccione...</option>
+                    <option *ngFor="let prop of listadoUsuarios"  value={{prop.id}}>{{prop.nombre}} {{prop.apellido}}</option>
+                  </select>
+                  <label for="floatingEstado">Propietario</label>
+                </div>
+                <div *ngIf="formMascota.get('propietario')?.touched && formMascota.get('propietario')?.errors?.['required']"
+                   class="invalid-feedback">Seleccione el Propietario</div>
+              </div>
+            </div>
+
+            <div class="row mb-3 g-2">
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <img src="./assets/iconos/loro.gif" class="kicon" width="40px" alt="">
+                  <input formControlName="foto"
+                    type="text"
+                    class="form-control"
+                    id="floatingEmail"
+                    placeholder="name@example.com"
+                    value=""
+                  />
+                  <label for="floatingEmail">Foto</label>
+                </div>
+                <div *ngIf="formMascota.get('foto')?.touched && formMascota.get('foto')?.errors?.['required']"
+                   class="invalid-feedback">
+                  Digite la ruta de la foto
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-4 g-0">
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <img src="./assets/iconos/regresar.gif" class="kicon" width="40px" alt="">
+                  <textarea formControlName="comentario"
+                    class="form-control"
+                    placeholder="Deje aquí su Comentario"
+                    id="floatingComentario"
+                    style="height: 100px"
+                  ></textarea>
+                  <label for="floatingComentario">Comentario</label>
+                </div>
+                <div *ngIf="formMascota.get('comentario')?.touched && formMascota.get('comentario')?.errors?.['required']"
+                   class="invalid-feedback">
+                  Deje aquí su Comentario
+                </div>
+              </div>
+            </div>
+            
+              <button [disabled]="!formMascota.valid" type="submit" class="btn btn-secondary btn-lg">
+                Guardar
+              </button>
+              <a routerLink="/gestion/mascotas-listar" class="btn btn-dark btn-lg ms-4">Regresar</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+

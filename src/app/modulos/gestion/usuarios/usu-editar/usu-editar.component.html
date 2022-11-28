@@ -1,0 +1,153 @@
+<section class="" id="usuarioEditar">
+  <div class="section-title">
+    <h3 class="display-4 title" >
+      Editar Usuario
+    </h3>
+  </div>
+
+  <div class="card mb-3 w-75 shadow formularios">
+    <div class="row mb-3 g-0">
+      <div class="col-md-4">
+        <img
+          src="./assets/images/gestion/gato-5.jpg" 
+          class="img-fluid imgForm"
+          alt="imagen"
+        />
+      </div>
+      <div class="col-md-8 kard">
+        <div class="card-body">
+          <form [formGroup]="formUsuario" (ngSubmit) = "ActualizarUsuario()">
+
+            <div class="row mb-3">
+
+              <div class="col-md input-group has-validation">
+                <input type="hidden" formControlName="id"/>                
+                <div class="form-floating is-invalid">
+                  <i class="bi bi-badge-cc-fill kicon h3"></i>
+                  <input formControlName="cedula"
+                    type="text"
+                    class="form-control"
+                    id="floatingCedula"
+                    placeholder="Cedula"
+                    value=""
+                  />
+                  <label for="floatingNombre">Cédula</label>
+                </div>
+                <div *ngIf="formUsuario.get('cedula')?.touched && formUsuario.get('cedula')?.errors?.['required']"
+                    class="invalid-feedback">Digite su Cédula</div>
+              </div>
+
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <i class="bi bi-people kicon h3"></i>
+                  <select formControlName="rol"  class="form-select kselect" id="floatingRol">
+                    <option selected disabled value="">Seleccione...</option>
+                    <option>admin</option>
+                    <option>asesor</option>
+                    <option>cliente</option>
+                  </select>
+                  <label for="floatingRol">Rol</label>
+                </div>
+                <div *ngIf="formUsuario.get('rol')?.touched && formUsuario.get('rol')?.errors?.['required']" class="invalid
+                    -feedback">Seleccione el Rol en el sistema</div>
+              </div>
+
+            </div>
+          <div class="row mb-3">                          
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <i class="bi bi-person-fill kicon h3"></i>
+                  <input formControlName="nombre"
+                    type="text"
+                    class="form-control"
+                    id="floatingNombre"
+                    placeholder="Nombre"
+                    value=""
+                  />
+                  <label for="floatingNombre">Nombre</label>
+                </div>
+                <div *ngIf="formUsuario.get('nombre')?.touched && formUsuario.get('nombre')?.errors?.['required']"
+                    class="invalid-feedback">Digite su Nombre</div>
+              </div>
+
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <i class="bi bi-person-fill kicon h3"></i>
+                  <input formControlName="apellido"
+                    type="text"
+                    class="form-control"
+                    id="floatingApellido"
+                    placeholder="Apellido"
+                    value=""
+                  />
+                  <label for="floatingApellido">Apellido</label>
+                </div>
+                <div *ngIf="formUsuario.get('apellido')?.touched && formUsuario.get('apellido')?.errors?.['required']" 
+                      class="invalid-feedback">Digite su Apellido
+                </div>
+              </div>
+          </div>
+            <div class="row mb-3 g-2">
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <i class="bi bi-envelope-at-fill kicon h3"></i>
+                  <input formControlName="correo"
+                    type="email"
+                    class="form-control"
+                    id="floatingEmail"
+                    placeholder="name@example.com"
+                    value=""
+                  />
+                  <label for="floatingEmail">Email</label>
+                </div>
+                <div *ngIf="formUsuario.get('correo')?.touched && formUsuario.get('correo')?.errors?.['required']" class="invalid-feedback">
+                  Digite su correo electrónico
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3 g-2">
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                <i class="bi bi-telephone-forward-fill kicon h4"></i>
+                <input formControlName="telefono"
+                  type="telefono"
+                  class="form-control"
+                  id="floatingTelefono"
+                  placeholder="Telefono"
+                  value=""
+                />
+                <label for="floatingTelefono">Teléfono</label>
+                </div>
+              <div *ngIf="formUsuario.get('telefono')?.touched && formUsuario.get('telefono')?.errors?.['required']" 
+                    class="invalid-feedback">Digite su Teléfono</div>
+              </div>
+
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                <i class="bi bi-key-fill kicon h2"></i>
+                <input formControlName="contrasena"
+                  type="text"
+                  class="form-control"
+                  id="floatingContrasena"
+                  placeholder="Contraseñaa"
+                  value=""
+                  readOnly
+                />
+                <label for="floatingContrasena">Contraseña</label>
+                </div>
+                <div *ngIf="formUsuario.get('contrasena')?.touched && formUsuario.get('contrasena')?.errors?.['required']" 
+                      class="invalid-feedback">Digite la Contraseña</div>
+              </div>
+              
+            </div>
+            
+              <button type="submit" class="btn btn-secondary btn-lg mt-4 ps-4 pe-4" [disabled]="formUsuario.invalid"> 
+                Actualizar
+              </button>
+              <a routerLink="/gestion/usuarios-listar" class="btn btn-dark btn-lg ms-4">Regresar</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 

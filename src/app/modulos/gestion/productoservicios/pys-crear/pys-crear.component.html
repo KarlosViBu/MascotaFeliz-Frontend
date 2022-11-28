@@ -1,0 +1,121 @@
+<section class="" id="productosyserviciosCrear">
+  <div class="section-title">
+    <h3 class="display-4 title" >
+      Crear Productos y Servicios
+    </h3>
+  </div>
+
+  <div class="card mb-3 w-75 shadow formularios">
+    <div class="row mb-3 g-0">
+      <div class="col-md-4">
+        <img
+        src="./assets/images/gestion/gato-1.jpg" 
+          class="img-fluid imgForm"
+          alt="imagen"
+        />
+      </div>
+      <div class="col-md-8 kard">
+        <div class="card-body">
+          <form [formGroup]="formProdServi" (ngSubmit) = "guardarProdServi()">
+            <div class="row mb-3">
+
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <img src="./assets/iconos/gato.gif" class="kicon" width="40px" alt="">
+                  <input formControlName="nombre"
+                    type="text"
+                    class="form-control"
+                    id="floatingNombre"
+                    placeholder="Nombre"
+                    value=""
+                  />
+                  <label for="floatingNombre">Nombre</label>
+                </div>
+                <div *ngIf="formProdServi.get('nombre')?.touched && formProdServi.get('nombre')?.errors?.['required']"
+                   class="invalid-feedback">Digite el Nombre</div>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <img src="./assets/iconos/pulpo.gif" class="kicon" width="40px" alt=""> 
+                  <input formControlName="descripcion"
+                    type="text"
+                    class="form-control"
+                    id="floatingDescripcion"
+                    placeholder="Descripción"
+                    value=""
+                  />
+                  <label for="floatingDescripcion">Descripción</label>
+                </div>
+                <div *ngIf="formProdServi.get('descripcion')?.touched && formProdServi.get('descripcion')?.errors?.['required']"
+                   class="invalid-feedback">Digite la Descripción del producto</div>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <img src="./assets/iconos/tiburon.gif" class="kicon" width="40px" alt=""> 
+                  <input formControlName="foto"
+                    type="text"
+                    class="form-control"
+                    id="floatingFoto"
+                    placeholder="Foto"
+                    value=""
+                  />
+                  <label for="floatingFoto">Imagen</label>
+                </div>
+                <div *ngIf="formProdServi.get('foto')?.touched && formProdServi.get('foto')?.errors?.['required']"
+                   class="invalid-feedback">Digite la ruta de la imagen</div>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <img src="./assets/iconos/perro.gif" class="kicon" width="40px" alt="">
+                  <select formControlName="tipo" class="form-select kselect" id="floatingTipo">
+                    <option selected disabled value="">Seleccione...</option>
+                    <option>Producto</option>
+                    <option>Servicio</option>
+                  </select>
+                  <label for="floatingTipo">Tipo</label>
+                </div>
+                <div *ngIf="formProdServi.get('tipo')?.touched && formProdServi.get('tipo')?.errors?.['required']"
+                   class="invalid-feedback">Seleccione el Tipo</div>
+              </div>
+
+                <div class="col-md input-group has-validation">
+                  <div class="form-floating is-invalid">
+                    <i class="bi bi-currency-exchange kicon h1"></i>
+                    <input formControlName="precio"
+                      type="number"
+                      class="form-control"
+                      id="floatingPrecio"
+                      placeholder="Precio"
+                      value=""
+                    />
+                    <label for="floatingPrecio">Precio</label>
+                  </div>
+                  <div *ngIf="formProdServi.get('precio')?.touched && formProdServi.get('precio')?.errors?.['required']"
+                     class="invalid-feedback">Digite el Precio del Producto</div>
+                </div>
+              </div>
+
+            <div class="row mb-4">
+              
+            </div>
+
+            <button [disabled]="!formProdServi.valid" type="submit" class="btn btn-secondary btn-lg">
+                Guardar
+              </button>
+              <a routerLink="/gestion/productosyservicios-listar" class="btn btn-dark btn-lg ms-4">Regresar</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+

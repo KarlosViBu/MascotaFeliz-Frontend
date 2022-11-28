@@ -1,0 +1,103 @@
+<section class="" id="sucursalCrear">
+  <div class="section-title">
+    <h3 class="display-4 title" >
+      Crear Sucursales
+    </h3>
+  </div>
+
+  <div class="card mb-3 w-50 shadow formularios">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          src="./assets/images/gestion/per-3.jpg" 
+          class="img-fluid imgForm"
+          alt="imagen"
+        />
+      </div>
+      <div class="col-md-8 kard">
+        <div class="card-body">
+          <form [formGroup]="formSucursal" (ngSubmit) = "guardarSucursal()">
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <!-- <i class="bi bi-gem kicon h3"></i> -->
+                  <i class="bi bi-award-fill kicon h3"></i>
+                  <!-- <i class="bi bi-cc-circle-fill"></i> -->
+                  <!-- <i class="bi bi-reply-all-fill"></i> -->
+                  <input formControlName="direccion"
+                    type="text"
+                    class="form-control"
+                    id="floatingDireccion"
+                    placeholder="Dirección"
+                    value=""
+                  />
+                  <label for="floatingDireccion">Dirección</label>
+                </div>
+                <div *ngIf="formSucursal.get('direccion')?.touched && formSucursal.get('direccion')?.errors?.['required']"
+                     class="invalid-feedback">Digite la Dirección.
+                </div>
+              </div>
+
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <!-- <i class="bi bi-gem kicon h3"></i> -->
+                  <i class="bi bi-award-fill kicon h3"></i>
+                  <!-- <i class="bi bi-cc-circle-fill"></i> -->
+                  <!-- <i class="bi bi-reply-all-fill"></i> -->
+                  <input formControlName="telefono"
+                    type="text"
+                    class="form-control"
+                    id="floatingTelefono"
+                    placeholder="Teléfono"
+                    value=""
+                  />
+                  <label for="floatingTelefono">Teléfono</label>
+                </div>
+                <div *ngIf="formSucursal.get('telefono')?.touched && formSucursal.get('telefono')?.errors?.['required']" 
+                  class="invalid-feedback">Digite el Teléfono</div>
+              </div>
+
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <i class="bi bi-people kicon h3"></i>
+                  <select formControlName="ciudad" class="form-select kselect" id="floatingCiudad">
+                    <option selected disabled value="">Seleccione...</option>
+                    <option>Barranquilla</option>
+                    <option>Cartagena</option>
+                    <option>Manizales</option>
+                    <option>Cali</option>
+                  </select>
+                  <label for="floatingCiudad">Ciudad</label>
+                </div>
+                <div *ngIf="formSucursal.get('ciudad')?.touched && formSucursal.get('ciudad')?.errors?.['required']"
+                 class="invalid-feedback">Seleccione la Ciudad</div>
+              </div>
+
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <i class="bi bi-people kicon h3"></i>
+                  <select formControlName="departamento" class="form-select kselect" id="floatingDepartamento">
+                    <option selected disabled value="">Seleccione...</option>
+                    <option>Atlantico</option>
+                    <option>Bolivar</option>
+                    <option>Caldas</option>
+                    <option>Valle</option>
+                  </select>
+                  <label for="floatingDepartamento">Departamento</label>
+                </div>
+                <div *ngIf="formSucursal.get('departamento')?.touched && formSucursal.get('departamento')?.errors?.['required']"
+                 class="invalid-feedback">Seleccione el Departamento</div>
+              </div>
+            <!-- </div> -->
+
+              <button type="submit" class="btn btn-secondary btn-lg mt-4 ps-4 pe-4"
+                  [disabled]="formSucursal.invalid">
+                Guardar
+              </button>
+              <a routerLink="/gestion/sucursales-listar" class="btn btn-dark btn-lg ms-4">Regresar</a>
+            <!-- </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 

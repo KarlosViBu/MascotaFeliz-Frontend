@@ -1,0 +1,83 @@
+<section class="" id="planesEditar">
+  <div class="section-title">
+    <h3 class="display-4 title" >
+      Editar Planes de Afiliación
+    </h3>
+  </div>
+
+  <div class="card mb-3 w-50 shadow formularios">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+        src="./assets/images/gestion/coika.jpg" 
+          class="img-fluid imgForm"
+          alt="imagen"
+        />
+      </div>
+      <div class="col-md-8 kard">
+        <div class="card-body">
+          <form [formGroup]="formPlan" (ngSubmit) = "ActualizarPlan()">
+            <!-- <div class="row"> -->
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <i class="bi bi-award-fill kicon h3"></i>
+                  <input formControlName="nombre"
+                    type="text"
+                    class="form-control"
+                    id="floatingNombre"
+                    placeholder="Nombre"
+                    value=""
+                  />
+                  <label for="floatingNombre">Nombre</label>
+                </div>
+                <div *ngIf="formPlan.get('nombre')?.touched && formPlan.get('nombre')?.errors?.['required']"
+                   class="invalid-feedback">Digite el Nombre</div>
+              </div>
+
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <i class="bi bi-currency-exchange kicon h1"></i>
+                  <input formControlName="precio"
+                    type="number"
+                    class="form-control"
+                    id="floatingPrecio"
+                    placeholder="Precio en Miles $"
+                    value=""
+                  />
+                  <label for="floatingPrecio">Precio</label>
+                </div>
+                <div *ngIf="formPlan.get('precio')?.touched && formPlan.get('precio')?.errors?.['required']"
+                   class="invalid-feedback">Digite el Precio en Miles de Pesos</div>
+              </div>
+            <!-- </div> -->
+
+            <!-- <div class="row g-2 mt-1"> -->
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <i class="bi bi-chat-right-dots-fill kicon h2"></i>
+                  <textarea formControlName="descripcion"
+                    class="form-control"
+                    placeholder="Deje aquí su Descripción"
+                    id="floatingDescripcion"
+                    style="height: 150px"
+                  ></textarea>
+                  <label for="floatingDescripcion">Descripción</label>
+                </div>
+                <div *ngIf="formPlan.get('descripcion')?.touched && formPlan.get('descripcion')?.errors?.['required']"
+                   class="invalid-feedback">
+                  Describa el Plan
+                </div>
+              </div>
+            <!-- </div> -->
+            <!-- <div class="row row-cols-4 crear ms-1 mt-4"> -->
+              <button [disabled]="!formPlan.valid" type="submit" class="btn btn-secondary btn-lg">
+                Actualizar
+              </button>
+              <a routerLink="/gestion/planes-listar" class="btn btn-dark btn-lg ms-4">Regresar</a>
+            <!-- </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 

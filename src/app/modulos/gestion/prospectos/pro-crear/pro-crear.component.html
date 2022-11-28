@@ -1,0 +1,114 @@
+<section class="" id="prospectoCrear">
+  <div class="section-title">
+    <h3 class="display-4 title" >
+      Contáctanos
+    </h3>
+  </div>
+
+  <div class="card mb-3 w-100 shadow formularios">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          src="./assets/images/gestion/gato-3.jpg" 
+          class="img-fluid imgForm"
+          alt="imagen"
+        />
+      </div>
+      <div class="col-md-8 kard">
+        <div class="card-body">
+          <form [formGroup]="formProspecto" (ngSubmit) = "guardarProspecto()">
+            <div class="row">
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <i class="bi bi-person-fill kicon h2"></i>
+                  <input formControlName="nombre"
+                    type="text"
+                    class="form-control"
+                    id="floatingNombre"
+                    placeholder="Nombre"
+                    value=""
+                  />
+                  <label for="floatingNombre">Nombre</label>
+                </div>
+                <div *ngIf="formProspecto.get('nombre')?.touched && formProspecto.get('nombre')?.errors?.['required']" 
+                  class="invalid-feedback">Digite su Nombre</div>
+              </div>
+
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <i class="bi bi-person-fill kicon h2"></i>
+                  <input formControlName="apellido"
+                    type="text"
+                    class="form-control"
+                    id="floatingApellido"
+                    placeholder="Apellido"
+                    value=""
+                  />
+                  <label for="floatingApellido">Apellido</label>
+                </div>
+                <div *ngIf="formProspecto.get('apellido')?.touched && formProspecto.get('apellido')?.errors?.['required']" 
+                  class="invalid-feedback">Digite su Apellido</div>
+              </div>
+            </div>
+            <div class="row g-2">
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <i class="bi bi-envelope-at-fill kicon h2"></i>
+                  <input formControlName="correo"
+                    type="email"
+                    class="form-control"
+                    id="floatingEmail"
+                    placeholder="name@example.com"
+                    value=""
+                  />
+                  <label for="floatingEmail">Email</label>
+                </div>
+                <div *ngIf="formProspecto.get('correo')?.touched && formProspecto.get('correo')?.errors?.['required']" 
+                  class="invalid-feedback">
+                  Digite su correo electrónico
+                </div>
+              </div>
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <i class="bi bi-telephone-forward-fill kicon h4"></i>
+                  <input formControlName="celular"
+                    type="Celular"
+                    class="form-control"
+                    id="floatingCelular"
+                    placeholder="Celular"
+                    value=""
+                  />
+                  <label for="floatingCelular">Celular</label>
+                </div>
+                <div *ngIf="formProspecto.get('celular')?.touched && formProspecto.get('celular')?.errors?.['required']" 
+                  class="invalid-feedback">Digite su Celular</div>
+              </div>
+            </div>
+            <div class="row g-2 mt-1">
+              <div class="col-md input-group has-validation">
+                <div class="form-floating is-invalid">
+                  <i class="bi bi-chat-right-dots-fill kicon h2"></i>
+                  <textarea formControlName="comentario"
+                    class="form-control"
+                    placeholder="Deje aquí su Comentario"
+                    id="floatingComentario"
+                    style="height: 100px"></textarea>
+                  <label for="floatingComentario">Comentario</label>
+                </div>
+                <div *ngIf="formProspecto.get('comentario')?.touched && formProspecto.get('comentario')?.errors?.['required']" 
+                  class="invalid-feedback">
+                  Deje aquí su Comentario
+                </div>
+              </div>
+            </div>
+              <button type="submit" class="btn btn-secondary btn-lg mt-4 ps-4 pe-4" [disabled]="formProspecto.invalid"> 
+                Guardar
+              </button>
+              <a routerLink="/gestion/prospectos-listar" class="btn btn-dark btn-lg ms-4">Regresar</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+

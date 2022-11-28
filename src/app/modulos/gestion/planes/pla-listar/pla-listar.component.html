@@ -1,0 +1,123 @@
+<section id="planes">
+  <div class="section-title">
+    <h3 class="display-4 text-center title-planes">Planes</h3>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col planess">
+      <div class="card shadows border-info planes">
+        <div class="card-header bg-info border-info text-white text-center h4">
+          Basico
+        </div>
+        <div class="card-body">
+          <h5 class="card-title display-1 text-center precio">
+            $200 <br /><span class="h3">mil/mes</span>
+          </h5>
+          <p class="card-text p-1">
+            <i class="bi bi-check-circle-fill text-success h4"></i> Consultas Veterinarias. <br>
+            <i class="bi bi-check-circle-fill text-success h4"></i> Examenes de Laboratorio. <br>
+            <i class="bi bi-x-circle-fill text-danger h4"></i> Baño y Peluquería. <br>
+            <i class="bi bi-x-circle-fill text-danger h4"></i> SPA. <br>
+            <i class="bi bi-x-circle-fill text-danger h4"></i> Visitas Domiciliarias. <br>
+            <i class="bi bi-x-circle-fill text-danger h4"></i> Servicios Fúnebres.
+          </p>
+        </div>
+        <button class="btn btn-secondary">Adquirir</button>
+      </div>
+    </div>
+    <div class="col planess">
+      <div class="card shadows border-success planes">
+        <div
+          class="card-header bg-success border-success text-white text-center h4"
+        >
+          Plata
+        </div>
+        <div class="card-body">
+          <h5 class="card-title display-1 text-center precio">
+            $400 <br /><span class="h3">mil/mes</span>
+          </h5>
+          <p class="card-text p-1">
+            <i class="bi bi-check-circle-fill text-success h4"></i> Consultas Veterinarias. <br>
+            <i class="bi bi-check-circle-fill text-success h4"></i> Examenes de Laboratorio. <br>
+            <i class="bi bi-check-circle-fill text-success h4"></i> Baño y Peluquería. <br>
+            <i class="bi bi-check-circle-fill text-success h4"></i> SPA. <br>
+            <i class="bi bi-x-circle-fill text-danger h4"></i> Visitas Domiciliarias. <br>
+            <i class="bi bi-x-circle-fill text-danger h4"></i> Servicios Fúnebres.
+          </p>
+        </div>
+        <button class="btn btn-secondary">Adquirir</button>
+      </div>
+    </div>
+    <div class="col planess">
+      <div class="card shadows border-warning planes">
+        <div
+          class="card-header bg-warning border-warning text-white text-center h4"
+        >
+          Oro
+        </div>
+        <div class="card-body">
+          <h5 class="card-title display-1 text-center precio">
+            $800 <br /><span class="h3">mil/mes</span>
+          </h5>
+          <p class="card-text p-1">
+            <i class="bi bi-check-circle-fill text-success h4"></i> Consultas Veterinarias. <br>
+            <i class="bi bi-check-circle-fill text-success h4"></i> Examenes de Laboratorio. <br>
+            <i class="bi bi-check-circle-fill text-success h4"></i> Baño y Peluquería. <br>
+            <i class="bi bi-check-circle-fill text-success h4"></i> SPA. <br>
+            <i class="bi bi-check-circle-fill text-success h4"></i> Visitas Domiciliarias. <br>
+            <i class="bi bi-check-circle-fill text-success h4"></i> Servicios Fúnebres.
+          </p>
+        </div>
+        <button class="btn btn-secondary">Adquirir</button>
+      </div>
+    </div>
+  </div>
+</section>
+<br />
+<hr />
+
+
+<section class="table-responsive">
+  <div class="section-title">
+    <h3 class="display-4 title" >
+      Listado de Planes
+    </h3>
+  </div>
+  <a routerLink="/gestion/planes-crear" class="btn btn-secondary btn-lg mb-3">Crear</a>
+  <table class="table table-dark table-hover shadow">
+    <caption>
+      Planes
+    </caption>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody class="table-light">
+      
+      <tr *ngFor="let plan of listadoPlanes">
+        <td class="h4">{{plan.nombre}}</td>
+        <td> {{plan.descripcion}}
+        </td>
+        <td class="h4">{{plan.precio}}</td>
+        <td><a routerLink="/gestion/planes-editar/{{plan.id}}"><i class="ksocial bi bi-pen-fill me-3 h5"></i></a>
+            <a routerLink="/gestion/planes-borrar/{{plan.id}}"><i class="ksocial bi bi-trash3-fill me-3 h5"></i></a>
+        </td>
+      </tr>
+
+    </tbody>
+
+    <tfoot class="table-secondary">
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </tfoot>
+  </table>
+</section>

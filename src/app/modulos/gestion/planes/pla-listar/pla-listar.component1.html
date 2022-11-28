@@ -1,0 +1,74 @@
+<section class="table-responsive">
+  <div class="section-title">
+    <h3 class="display-4 title" >
+      Listado de Planes
+    </h3>
+  </div>
+  <a routerLink="/gestion/planes-crear" class="btn btn-secondary btn-lg mb-3">Crear</a>
+  <table class="table table-dark table-hover shadow">
+    <caption>
+      Planes
+    </caption>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody class="table-light">
+      
+      <tr>
+        <td class="h4">Básico</td>
+        <td> <i class="bi bi-check-circle-fill"></i> Consultas Veterinarias <br>
+             <i class="bi bi-check-circle-fill"></i> Examenes de Laboratorio
+        </td>
+        <td class="h4">$200</td>
+        <td><a routerLink="/gestion/planes-editar"><i class="ksocial bi bi-pen-fill me-3"></i></a>
+            <a routerLink="/gestion/planes-borrar"><i class="ksocial bi bi-trash3-fill me-3"></i></a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="h4"><br>Plata</td>
+        <td> <i class="bi bi-check-circle-fill"></i> Consultas Veterinarias. <br>
+             <i class="bi bi-check-circle-fill"></i> Examenes de Laboratorio. <br>
+             <i class="bi bi-check-circle-fill"></i> Baño y Peluquería. <br>
+             <i class="bi bi-check-circle-fill"></i> SPA. <br>
+        </td>
+        <td class="h4"><br>$400</td>
+        <td><a routerLink="/gestion/planes-editar"><i class="ksocial bi bi-pen-fill me-3"></i></a>
+            <a routerLink="/gestion/planes-borrar"><i class="ksocial bi bi-trash3-fill me-3"></i></a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="h4"><br><br>Oro</td>
+        <td> <i class="bi bi-check-circle-fill"></i> Consultas Veterinarias. <br>
+             <i class="bi bi-check-circle-fill"></i> Examenes de Laboratorio. <br>
+             <i class="bi bi-check-circle-fill"></i> Baño y Peluquería. <br>
+             <i class="bi bi-check-circle-fill"></i> SPA. <br>
+             <i class="bi bi-check-circle-fill"></i> Visitas Domiciliarias <br>
+             <i class="bi bi-check-circle-fill"></i> Servicios Fúnebres <br>
+        </td>
+        <td class="h4"><br><br>$800</td>
+        <td><a routerLink="/gestion/planes-editar"><i class="ksocial bi bi-pen-fill me-3"></i></a>
+            <a routerLink="/gestion/planes-borrar"><i class="ksocial bi bi-trash3-fill me-3"></i></a>
+        </td>
+      </tr>
+
+      
+    </tbody>
+
+    <tfoot class="table-secondary">
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </tfoot>
+  </table>
+</section>

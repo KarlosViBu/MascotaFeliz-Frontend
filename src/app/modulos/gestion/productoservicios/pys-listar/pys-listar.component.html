@@ -1,0 +1,52 @@
+<section class="table-responsive">
+  <div class="section-title">
+    <h3 class="display-4 title" >
+      Listado de Productos y Servicios
+    </h3>
+  </div>
+  <a routerLink="/gestion/productosyservicios-crear" class="btn btn-secondary btn-lg mt-4 mb-4 ps-4 pe-4 ">Crear</a>
+  <table class="table table-dark table-hover shadow">
+    <caption>
+      Productos y Servicios
+    </caption>
+    <thead class="h5">
+      <tr>
+        <th>Foto</th>
+        <th>Tipo</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody class="table-light">
+      
+      <tr *ngFor="let pross of listadoPyS">
+        <td>
+          <div class="imagen">
+            <img class="kminiatura" src={{pross.foto}} alt="imagen">
+          </div>
+        </td> 
+        <td> {{pross.tipo}} </td>
+        <td> {{pross.nombre}} </td>
+        <td> {{pross.descripcion}} </td>
+        <td> {{pross.precio | currency }} </td>
+        <td><a routerLink="/gestion/productosyservicios-editar/{{pross.id}}"><i class="ksocial bi bi-pen-fill me-3 h4"></i></a>
+            <a routerLink="/gestion/productosyservicios-borrar/{{pross.id}}"><i class="ksocial bi bi-trash3-fill me-3 h4"></i></a>
+        </td>
+      </tr>
+      
+    </tbody>
+
+    <tfoot class="table-secondary">
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+  </table>
+</section>

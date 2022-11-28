@@ -1,0 +1,110 @@
+
+
+#klogo{
+  width: 360px;
+  height: auto;
+  margin-top: 90px;
+  margin-left: 40px;
+  margin-bottom: 90px;
+  background-color: #000;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px black,
+              0 0 0 12px goldenrod,
+              0 0 0 20px black;
+  border: solid 8px black;
+
+}
+
+.carousel-caption{
+  background-color: hsla(0, 0%, 0%, 0.219);
+  border-radius: 50px;
+  color: gold;
+  text-shadow: 2px 3px #000;
+  /* background-color: gold; */
+}
+
+.carousel .igmCarousel{
+  max-height: 600px;
+  width: auto;
+}
+
+
+.kard {
+  background: #ebcda849;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #fff, #ebcda850);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #fff, #ebcda823); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 4em;
+}
+
+.slider {
+  height: 580px;
+  
+}
+
+.slider .card{
+  border: 3px solid #000;
+  border: 0;
+  
+}
+
+#titulogo span, .Tslider span{
+  color: goldenrod;
+  color: gold;
+}
+
+.Tslider {
+  text-shadow: 4px 5px #000;
+  margin-bottom: .5em;
+}
+
+
+.k25 {
+  font-size: 1.4rem;
+  line-height: 1.4em;
+}
+
+.card .h4{
+  line-height: 1.5em;
+}
+
+
+/*********** Planes *****************/
+
+.planes{
+  min-height: 18em;
+}
+.precio{
+  margin-top: -150px;
+  text-shadow: 4px 5px #000;  
+}
+
+.precio span {
+  text-shadow: 0 0;
+}
+
+.planes:hover{
+  border: 4px solid darkred;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.25) 0px 12px 13px, rgba(0, 0, 0, 0.30) 0px -3px 5px;
+  /* box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; */
+
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+ 
+  /* box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
+  
+  cursor: pointer;
+}
+
+.planes .btn{
+  font-size: 1.5em;
+}
+
+.planes .card-bodys {
+  padding: 2em;
+}
+.card .Tslider {
+  font-size: 4.0rem;
+}
+
+.separacion{
+  margin: 30px 0;
+ }
